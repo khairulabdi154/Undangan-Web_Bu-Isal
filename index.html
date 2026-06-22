@@ -665,7 +665,9 @@
 
         <section class="recipient reveal" style="--delay: 520ms" aria-label="Penerima undangan">
           <p class="recipient-label">Kepada Yth.<br>Bapak/Ibu/Saudara/I</p>
-          <p class="recipient-name">PT Cobra Dental Indonesia</p>
+          <!-- <p class="recipient-name">PT Cobra Dental Indonesia</p> -->
+          <span id="guestName">Bapak/Ibu/Saudara/i</span>
+          
         </section>
 
         <footer class="footer reveal" style="--delay: 600ms">
@@ -678,5 +680,15 @@
       </div>
     </article>
   </main>
+  
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+  
+    if (nama) {
+      document.getElementById("guestName").textContent = nama;
+    }
+  </script>
+  
 </body>
 </html>
